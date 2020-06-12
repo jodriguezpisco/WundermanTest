@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WudermanTestService } from './wuderman-test.service';
 
 @Component({
   selector: 'app-consumo-servicios',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./consumo-servicios.component.css']
 })
 export class ConsumoServiciosComponent implements OnInit {
+  data: any[];
 
-  constructor() { }
+  constructor(
+    private service: WudermanTestService
+  ) { }
 
   ngOnInit(): void {
+    this.ObtenerListaItems();
+  }
+
+  ObtenerListaItems(){
+    this.service.getListasItems().subscribe(result => {
+      this.data = result
+    })
   }
 
 }
