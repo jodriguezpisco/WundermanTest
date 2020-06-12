@@ -1,1 +1,44 @@
-<p>consumo-servicios works!</p>
+<div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i> CONSUMO DE SERVICIOS
+          </div>
+          <br/>
+          <div class="col-lg-12" style="text-align: center">
+            <div class="row">
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-success" (click)="getListItems()" value="Consultar">PETICION GET</button>
+              </div>
+              <div class="col-sm-2">
+                <button type="button" class="btn btn-success" (click)="postListItems()" value="Consultar">PETICION POST</button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p-dataTable #Usos [value]="getData" [rows]="10" [paginator]="true"
+    [pageLinks]="3" [rowsPerPageOptions]="[5,10,20,50]" scrollable="true" [globalFilter]="gb" #dt>
+    <p-column
+      [style]="{'width':'70%'}"
+      *ngFor="let col of cols"
+      field="{{col.field}}"
+      header="{{col.header}}"
+      [sortable]="true"
+      [filter]="true" filterPlaceholder="Search"></p-column>
+    <ng-template pTemplate="paginatorLeft">
+      <button type="button" pButton icon="fa-refresh"></button>
+    </ng-template>
+    <ng-template pTemplate="paginatorRight">
+      <button type="button" pButton icon="fa-cloud-upload"></button>
+    </ng-template>
+  </p-dataTable>
+  </div>
+  <!-- <div class="my-container">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+  </div> -->
