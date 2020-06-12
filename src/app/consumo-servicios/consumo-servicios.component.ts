@@ -7,7 +7,7 @@ import { WudermanTestService } from './wuderman-test.service';
   styleUrls: ['./consumo-servicios.component.css']
 })
 export class ConsumoServiciosComponent implements OnInit {
-  data: any[];
+  data: any =[];
 
   constructor(
     private service: WudermanTestService

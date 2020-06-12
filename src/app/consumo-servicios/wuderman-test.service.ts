@@ -13,8 +13,6 @@ export class WudermanTestService {
     ) { }
 
     getListasItems() {
-      return this.http.get(this.globals.DireccionIP).map((response: Response) => {
-        return response.json();
-        });
+      return this.http.get(this.globals.DireccionIP);
     }
 }
