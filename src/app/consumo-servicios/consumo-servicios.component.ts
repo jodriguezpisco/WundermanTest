@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WudermanTestService } from './wuderman-test.service';
-import {
-  MatInputModule,
-  MatNativeDateModule,
-  MatDatepickerModule,
-  MatSelectModule,
-  MatRadioModule,
-  MatListModule,
-  MatDialog
-} from '@angular/material/';
+import { TableModule } from "primeng/table";
+ 
 
 @Component({
   selector: 'app-consumo-servicios',
@@ -25,11 +18,12 @@ export class ConsumoServiciosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.cols =  [
-      {field: 'id', header:'Id'},
-      {field: 'title', header:'Título'},
-      {field: 'body', header:'Mensaje'}
-    ]
+    this.getListItems();
+    // this.cols =  [
+    //   {field: 'id', header:'Id'},
+    //   {field: 'title', header:'Título'},
+    //   {field: 'body', header:'Mensaje'}
+    // ]
   }
 
   getListItems(){

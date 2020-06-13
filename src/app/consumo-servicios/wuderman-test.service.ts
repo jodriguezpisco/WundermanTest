@@ -13,12 +13,12 @@ export class WudermanTestService {
     ) { }
 
     getListItems() {
-      var endpoint = "/post";
+      var endpoint = "/posts";
       return this.http.get(this.globals.DireccionIP + endpoint);
     }
 
     postListItems(){
-      var endpoint = "/post";
+      var endpoint = "/posts";
       return this.http.post(this.globals.DireccionIP + endpoint, null);
     }
 }

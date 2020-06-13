@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ConsumoServiciosComponent } from './consumo-servicios/consumo-servicios.component';
 import { WudermanTestService } from './consumo-servicios/wuderman-test.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
