@@ -5,16 +5,19 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ConsumoServiciosComponent } from './consumo-servicios/consumo-servicios.component';
-import { WudermanTestService } from './consumo-servicios/wuderman-test.service';
+import { WudermanTestService } from './wuderman-test.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ConsumoServiciosComponent
+    AppComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
